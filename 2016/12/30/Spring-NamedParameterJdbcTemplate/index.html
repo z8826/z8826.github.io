@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        archive_a: 2016/12 | 兔子先生的小仓库
+        Spring NamedParameterJdbcTemplate 详解 | 兔子先生的小仓库
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://zhangqixiang.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="archive_a: 2016/12 | 兔子先生的小仓库">
+    <meta property="og:title" content="Spring NamedParameterJdbcTemplate 详解 | 兔子先生的小仓库">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,100 +194,224 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-true
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
+                <!-- Post TOC -->
+
     
-    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/12/30/Spring-NamedParameterJdbcTemplate/">Spring NamedParameterJdbcTemplate 详解</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-NamedParameterJdbcTemplate类是基于JdbcTemplate...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/12/30/Spring-NamedParameterJdbcTemplate/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="xiang.orchid@gmail.com's avatar">
-            </div>
-            <div>
-                <strong>xiang.orchid@gmail.com</strong>
-                <span>12月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/12/30/Spring-NamedParameterJdbcTemplate/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            Spring NamedParameterJdbcTemplate 详解
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>xiang.orchid@gmail.com</strong>
+        <span>12月 30, 2016</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Spring-JdbcTemplate/">Spring JdbcTemplate</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    <!-- Leancloud Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="/2016/12/30/Spring-NamedParameterJdbcTemplate/" class="leancloud-views_num" data-flag-title="Spring NamedParameterJdbcTemplate 详解">
+     &nbsp;浏览量
+</span>
+        </li>
+    </a>
+    
+    
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spring NamedParameterJdbcTemplate 详解&url=http://zhangqixiang.com//2016/12/30/Spring-NamedParameterJdbcTemplate/index.html&via=xiang.orchid@gmail.com" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://zhangqixiang.com//2016/12/30/Spring-NamedParameterJdbcTemplate/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spring NamedParameterJdbcTemplate 详解&url=http://zhangqixiang.com//2016/12/30/Spring-NamedParameterJdbcTemplate/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<blockquote>
+<p><code>NamedParameterJdbcTemplate</code>类是基于<code>JdbcTemplate</code>类，并对它进行了封装从而支持命名参数特性。<br><code>NamedParameterJdbcTemplate</code>主要提供以下三类方法：<code>execute</code>方法、<code>query</code>及<code>queryForXXX</code>方法、<code>update</code>及<code>batchUpdate</code>方法。</p>
+</blockquote>
+<p>首先让我们看个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">@Test  </div><div class="line">public void testNamedParameterJdbcTemplate1() &#123;  </div><div class="line">NamedParameterJdbcTemplate namedParameterJdbcTemplate = null;  </div><div class="line">//namedParameterJdbcTemplate =  </div><div class="line">//    new NamedParameterJdbcTemplate(dataSource);  </div><div class="line">namedParameterJdbcTemplate =  </div><div class="line">new NamedParameterJdbcTemplate(jdbcTemplate);  </div><div class="line">    String insertSql = &quot;insert into test(name) values(:name)&quot;;  </div><div class="line">    String selectSql = &quot;select * from test where name=:name&quot;;  </div><div class="line">    String deleteSql = &quot;delete from test where name=:name&quot;;  </div><div class="line">    Map&lt;String, Object&gt; paramMap = new HashMap&lt;String, Object&gt;();  </div><div class="line">    paramMap.put(&quot;name&quot;, &quot;name5&quot;);  </div><div class="line">    namedParameterJdbcTemplate.update(insertSql, paramMap);  </div><div class="line">    final List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();  </div><div class="line">namedParameterJdbcTemplate.query(selectSql, paramMap,  </div><div class="line">new RowCallbackHandler() &#123;  </div><div class="line">        @Override  </div><div class="line">        public void processRow(ResultSet rs) throws SQLException &#123;  </div><div class="line">            result.add(rs.getInt(&quot;id&quot;));  </div><div class="line">        &#125;  </div><div class="line">    &#125;);  </div><div class="line">Assert.assertEquals(1, result.size());  </div><div class="line">SqlParameterSource paramSource = new MapSqlParameterSource(paramMap);  </div><div class="line">namedParameterJdbcTemplate.update(deleteSql, paramSource);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来让我们分析下代码吧：</p>
+<ol>
+<li><code>NamedParameterJdbcTemplate</code>初始化:可以使用<code>DataSource</code>或<code>JdbcTemplate</code> 对象作为构造器参数初始化</li>
+<li><code>insert into test(name) values(:name)</code>：其中<code>:name</code>就是命名参数</li>
+<li><code>update(insertSql, paramMap)</code>：其中<code>paramMap</code>是一个<code>Map</code>类型，包含键为<code>name</code>，值为<code>name5</code>的键值对，也就是为命名参数设值的数据</li>
+<li><code>query(selectSql, paramMap, new RowCallbackHandler()……)</code>：类似于<code>JdbcTemplate</code>中介绍的，唯一不同是需要传入<code>paramMap</code>来为命名参数设值</li>
+<li><code>update(deleteSql, paramSource)</code>：类似于<code>update(insertSql, paramMap)</code>，但使用<code>SqlParameterSource</code>参数来为命名参数设值，此处使用<code>MapSqlParameterSource</code>实现，其就是简单封装<code>Java.util.Map</code></li>
+</ol>
+<p><code>NamedParameterJdbcTemplate</code>类为命名参数设值有两种方式：<code>java.util.Map</code>和<code>SqlParameterSource</code>：</p>
+<ol>
+<li><code>java.util.Map</code>：使用Map键数据来对于命名参数，而<code>Map</code>值数据用于设值</li>
+<li><code>SqlParameterSource</code>：可以使用<code>SqlParameterSource</code>实现作为来实现为命名参数设值，默认有<code>MapSqlParameterSource</code>和<code>BeanPropertySqlParameterSource</code>实现；<code>MapSqlParameterSource</code>实现非常简单，只是封装了<code>java.util.Map</code>；而<code>BeanPropertySqlParameterSource</code>封装了一个<code>JavaBean</code>对象，通过<code>JavaBean</code>对象属性来决定命名参数的值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">package cn.javass.spring.chapter7;  </div><div class="line">public class UserModel &#123;  </div><div class="line">    private int id;  </div><div class="line">    private String myName;     </div><div class="line">    //省略getter和setter       </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Test  </div><div class="line">public void testNamedParameterJdbcTemplate2() &#123;  </div><div class="line">    NamedParameterJdbcTemplate namedParameterJdbcTemplate = null;  </div><div class="line">    namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate);  </div><div class="line">    UserModel model = new UserModel();  </div><div class="line">    model.setMyName(&quot;name5&quot;);  </div><div class="line">    String insertSql = &quot;insert into test(name) values(:myName)&quot;;  </div><div class="line">    SqlParameterSource paramSource = new BeanPropertySqlParameterSource(model);  </div><div class="line">    namedParameterJdbcTemplate.update(insertSql, paramSource);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看出<code>BeanPropertySqlParameterSource</code>使用能减少很多工作量，但命名参数必须和<code>JavaBean</code>属性名称相对应才可以。</p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2016/12/30/Spring-NamedParameterJdbcTemplate/" 
+            data-url="http://zhangqixiang.com/2016/12/30/Spring-NamedParameterJdbcTemplate/"
+            data-title="Spring NamedParameterJdbcTemplate 详解"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
