@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        archive_a: 2016/12 | 兔子先生的小仓库
+        springboot集成swagger2构建RESTful API文档 | 兔子先生的小仓库
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://zhangqixiang.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="archive_a: 2016/12 | 兔子先生的小仓库">
+    <meta property="og:title" content="springboot集成swagger2构建RESTful API文档 | 兔子先生的小仓库">
     <meta property="og:description" content="null">
     
      <!--[if lte IE 9]>
@@ -194,100 +194,263 @@
                 </button>
 				
 				
-                <!-- Index Module -->
-true
-<div class="material-index mdl-grid">
-	
-    <div class="locate-thumbnail-symbol"></div>
+                <!-- Post TOC -->
+
     
-    
+	<!-- Back Button -->
+<!--
+	<div class="material-back" id="backhome-div" tabindex="0">
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
+			<i class="material-icons" role="presentation">arrow_back</i>
+			<span class="mdl-button__ripple-container">
+				<span class="mdl-ripple"></span>
+			</span>
+		</a>
+	</div>			
+-->
+	<!-- Left aligned menu below button -->
+	<button id="post-toc-trigger-btn"
+			class="mdl-button mdl-js-button mdl-button--icon">
+	  <i class="material-icons">format_list_numbered</i>
+	</button>
+
+	<ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+		for="post-toc-trigger-btn">
+			
+			<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">开发环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启用swagger2"><span class="post-toc-number">2.</span> <span class="post-toc-text">启用swagger2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍swagger2"><span class="post-toc-number">3.</span> <span class="post-toc-text">介绍swagger2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#swagger2常用注解"><span class="post-toc-number">4.</span> <span class="post-toc-text">swagger2常用注解</span></a></li></ol>
 		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
+<!--			<li class="mdl-menu__item">Some Action</li>-->
+	</ul>
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+		
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+	<!-- Paradox Post Header -->
 	
 		
 			<!-- Random Thumbnail -->
 			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2016/12/30/Spring-NamedParameterJdbcTemplate/">Spring NamedParameterJdbcTemplate 详解</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-NamedParameterJdbcTemplate类是基于JdbcTemplate...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/12/30/Spring-NamedParameterJdbcTemplate/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="xiang.orchid@gmail.com's avatar">
-            </div>
-            <div>
-                <strong>xiang.orchid@gmail.com</strong>
-                <span>12月 30, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2016/12/30/Spring-NamedParameterJdbcTemplate/" data-count-type="comments"></span>
-                </span>
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
+				<script>
     
     var randomNum;
+    randomNum = Math.floor(Math.random() * 5 + 1);
     
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
+    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
     
 </script>
 
+		
+	
+        <p class="article-headline-p">
+            springboot集成swagger2构建RESTful API文档
+        </p>
+    </div>
+
 	
 
+				
+				
+					<!-- Paradox Post Info -->
+					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>xiang.orchid@gmail.com</strong>
+        <span>1月 17, 2017</span>
+    </div>
+    
+    <div class="section-spacer"></div>
+	
+    <!-- Favorite -->
+<!--
+    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+        <i class="material-icons" role="presentation">favorite</i>
+        <span class="visuallyhidden">favorites</span>
+    </button>
+-->
+    
+    <!-- Tags (bookmark) -->
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Spring/">Spring</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Springboot/">Springboot</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/swagger2/">swagger2</a>
+    </ul>
+    
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    
+    <!-- Leancloud Views -->
+    <a class="post_share-link" href="#">
+        <li class="mdl-menu__item">
+            <span id="/2017/01/17/Springboot-Swagger2/" class="leancloud-views_num" data-flag-title="springboot集成swagger2构建RESTful API文档">
+     &nbsp;浏览量
+</span>
+        </li>
+    </a>
+    
+    
+    
+    
+    <!-- Share Twitter -->
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=springboot集成swagger2构建RESTful API文档&url=http://zhangqixiang.com//2017/01/17/Springboot-Swagger2/index.html&via=xiang.orchid@gmail.com" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Twitter
+        </li>
+    </a>
+    
+    <!-- Share Google+ -->
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://zhangqixiang.com//2017/01/17/Springboot-Swagger2/index.html" target="_blank">
+        <li class="mdl-menu__item">
+            分享到 Google+
+        </li>
+    </a>
+    
+    <!-- Share Weibo -->
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=springboot集成swagger2构建RESTful API文档&url=http://zhangqixiang.com//2017/01/17/Springboot-Swagger2/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <li class="mdl-menu__item">
+            分享到微博
+        </li>
+    </a>
+</ul>
 </div>
+				
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+	
+		<blockquote>
+<p>在开发过程中,有时候我们需要不停的测试接口,自测,或者交由测试测试接口,我们需要构建一个文档,都是单独写,太麻烦了,现在使用springboot集成swagger2来构建RESTful API文档,可以在访问接口上,直接添加注释</p>
+</blockquote>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ol>
+<li>jdk版本是1.8</li>
+<li>springboot的版本是1.4.3</li>
+<li>开发工具为 intellij idea</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">   &lt;groupId&gt;io.springfox&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;</div><div class="line">   &lt;version&gt;2.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div><div class="line">&lt;dependency&gt;</div><div class="line">   &lt;groupId&gt;io.springfox&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;</div><div class="line">   &lt;version&gt;2.6.1&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="启用swagger2"><a href="#启用swagger2" class="headerlink" title="启用swagger2"></a>启用swagger2</h2><p>接下来,我们构建swagger2的配置类,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//注解开启 swagger2 功能</div><div class="line">@EnableSwagger2</div><div class="line">//注解标示,这是一个配置类,@Configuation注解包含了@Component注解</div><div class="line">//可以不用在使用@Component注解标记这是个bean了,</div><div class="line">@Configuration</div><div class="line">public class Swagger2 &#123;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * 通过 createRestApi函数来构建一个DocketBean</div><div class="line">	 * 函数名,可以随意命名,喜欢什么命名就什么命名</div><div class="line">	 */</div><div class="line">	@Bean</div><div class="line">	public Docket createRestApi() &#123;</div><div class="line">		return new Docket(DocumentationType.SWAGGER_2)</div><div class="line">				.apiInfo(apiInfo())//调用apiInfo方法,创建一个ApiInfo实例,里面是展示在文档页面信息内容</div><div class="line">				.select()</div><div class="line">				//控制暴露出去的路径下的实例</div><div class="line">				//如果某个接口不想暴露,可以使用以下注解</div><div class="line">				//@ApiIgnore 这样,该接口就不会暴露在 swagger2 的页面下</div><div class="line">				.apis(RequestHandlerSelectors.basePackage(&quot;com.example&quot;))</div><div class="line">				.paths(PathSelectors.any())</div><div class="line">				.build();</div><div class="line">	&#125;</div><div class="line">    //构建 api文档的详细信息函数</div><div class="line">	private ApiInfo apiInfo() &#123;</div><div class="line">		return new ApiInfoBuilder()</div><div class="line">				//页面标题</div><div class="line">				.title(&quot;Spring Boot 测试使用 Swagger2 构建RESTful API&quot;)</div><div class="line">				//创建人</div><div class="line">				.contact(&quot;xiang.orchid@gmail.com&quot;)</div><div class="line">				//版本号</div><div class="line">				.version(&quot;1.0&quot;)</div><div class="line">				//描述</div><div class="line">				.description(&quot;API 描述&quot;)</div><div class="line">				.build();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>swagger2的配置类已经配置好了,下面,我们就在主函数里面随意写一些接口吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">@SpringBootApplication(scanBasePackages = &#123;&quot;com&quot;&#125;)</div><div class="line">//该注解包含了@Controller和@ResponseBody两个注解</div><div class="line">@RestController</div><div class="line">public class DemoApplication&#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		SpringApplication.run(DemoApplication.class, args);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">    * 以下函数的注释,不增加注解了,将在下面统一做描述</div><div class="line">    */</div><div class="line"></div><div class="line"></div><div class="line">	@ApiOperation(value = &quot;测试post请求&quot;,notes=&quot;注意事项&quot;)</div><div class="line">	@ApiImplicitParam(dataType = &quot;User&quot;,name = &quot;user&quot;,value = &quot;用户信息&quot;,required = true)</div><div class="line">	@RequestMapping(value = &quot;/testPost&quot;,method = RequestMethod.POST)</div><div class="line">	public String testPost(@RequestBody User user)&#123;</div><div class="line">		return &quot;success&quot;;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	@ApiOperation(value = &quot;测试get请求&quot;,notes=&quot;注意事项&quot;)</div><div class="line">	@ApiImplicitParam(name = &quot;id&quot;,value = &quot;用户id&quot;,dataType = &quot;String&quot;,paramType = &quot;path&quot;)</div><div class="line">	@RequestMapping(value = &quot;/testGet/&#123;id&#125;&quot;,method = RequestMethod.GET)</div><div class="line">	public String testGet(@PathVariable String id)&#123;</div><div class="line">		return id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@ApiOperation(value = &quot;测试组合注解&quot;,notes=&quot;注意事项&quot;)</div><div class="line">	@ApiImplicitParams(&#123;</div><div class="line">			@ApiImplicitParam(dataType = &quot;User&quot;,name = &quot;user&quot;,value = &quot;用户信息&quot;,required = true,paramType = &quot;body&quot;),</div><div class="line">			@ApiImplicitParam(dataType = &quot;string&quot;,name = &quot;id&quot;,value = &quot;用户id&quot;,required = true,paramType = &quot;path&quot;)</div><div class="line">	&#125;)</div><div class="line">	@RequestMapping(value = &quot;/joinAnnotation/&#123;id&#125;&quot;,method = RequestMethod.POST)</div><div class="line">	public User joinAnnotation(@PathVariable String id,@RequestBody User user)&#123;</div><div class="line">		return user;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@ApiIgnore</div><div class="line">	public String testIgnore()&#123;</div><div class="line">		return &quot;success&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="介绍swagger2"><a href="#介绍swagger2" class="headerlink" title="介绍swagger2"></a>介绍swagger2</h2><p>写好controller后,我们可以访问以下地址: <a href="http://localhost:8080/swagger-ui.html" target="_blank" rel="external">http://localhost:8080/swagger-ui.html</a> ,如果你没引入swagger2依赖,你是访问不了的..然后你会得到一个如下页面<br><img src="http://ww2.sinaimg.cn/large/e0d3eb33jw1fbtdvtpc3aj20wv09bdga.jpg" alt="此处输入图片的描述"></p>
+<p>上面的页面,就是swagger2里面的页面,可以发现, apiInfo里面设置的内容在左边展示出来了,demo-application其实就是controller的类名,右边有三个按钮,分别是 Show/Hide,List Opertions和Expand Operations,三个按钮都可以打开,类下的接口,点击后,会得到如下一个效果页面:<br><img src="http://ww1.sinaimg.cn/large/e0d3eb33jw1fbtdum1x3yj20wr0cggmf.jpg" alt="此处输入图片的描述"><br>可以发现,展示出来了,controller下的三个接口(其实有四个,只不过有一个我们用注解忽略了,在这不展示而已..)</p>
+<p>上面三个接口,在我们注解里面添加的,都有展示,请求方式,接口名称,现在我们打开某个接口,看看具体内容,接口内的内容,我不在用文字描述,我直接在截图里面添加描述了.见谅….</p>
+<p><img src="http://ww4.sinaimg.cn/large/e0d3eb33jw1fbtdwn8mt6j21kw12bqf8.jpg" alt="此处输入图片的描述"></p>
+<p><img src="http://ww3.sinaimg.cn/large/e0d3eb33jw1fbtdy44md4j21is0t8aig.jpg" alt="此处输入图片的描述"></p>
+<p><img src="http://ww4.sinaimg.cn/large/e0d3eb33jw1fbtdykvunuj21kw0y6k2x.jpg" alt="此处输入图片的描述"></p>
+<p>以上就是比较简单的demo测试文档啦,如果各位想配置更详细,就去官网看吧..地址我贴出来:</p>
+<p>swagger官网地址:<a href="http://swagger.io/" target="_blank" rel="external">http://swagger.io/</a></p>
+<h2 id="swagger2常用注解"><a href="#swagger2常用注解" class="headerlink" title="swagger2常用注解"></a>swagger2常用注解</h2><p>下面就是介绍,上面接口中,上面关于swagger2本人常用注解的一些描述<br>@ApiOperation：用在方法上，说明方法的作用</p>
+<ol>
+<li>value: 表示接口名称</li>
+<li>notes: 表示接口详细描述 </li>
+</ol>
+<p>@ApiImplicitParams：用在方法上包含一组参数说明</p>
+<p>@ApiImplicitParam：用在@ApiImplicitParams注解中，指定一个请求参数的各个方面</p>
+<ol>
+<li>paramType：参数位置</li>
+</ol>
+<ul>
+<li>header 对应注解：@RequestHeader</li>
+<li>query 对应注解：@RequestParam</li>
+<li>path  对应注解: @PathVariable</li>
+<li>body 对应注解: @RequestBody</li>
+</ul>
+<ol>
+<li>name：参数名</li>
+<li>dataType：参数类型</li>
+<li>required：参数是否必须传</li>
+<li>value：参数的描述</li>
+<li>defaultValue：参数的默认值</li>
+</ol>
+<p>@ApiResponses：用于表示一组响应</p>
+<p>@ApiResponse：用在@ApiResponses中，一般用于表达一个错误的响应信息</p>
+<ol>
+<li>code：状态码</li>
+<li>message：返回自定义信息</li>
+<li>response：抛出异常的类</li>
+</ol>
+<p>@ApiIgnore: 表示该接口函数不对swagger2开放展示<br>以上这些就是我测试过的注解,并没有深究,有兴趣的,可以看看其它注解,或者源码,会比我描述的全很多,</p>
+<p><strong>对了,需要注意下,@ApiImplicitParam注解下的paramType属性,会影响接口的测试,如果设置的属性跟spring的注解对应不上,会获取不到参数,例如:paramType=path,函数内却使用@RequestParam注解,这样,可能会获取不到传递进来的参数,需要按照上面进行对应,将@RequestParam注解改为@PathVariable才能获取到对应的参数…</strong></p>
+
+	
+	
+	
+	
+</div>
+				
+				
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+        <div class="ds-thread" 
+            data-thread-key="2017/01/17/Springboot-Swagger2/" 
+            data-url="http://zhangqixiang.com/2017/01/17/Springboot-Swagger2/"
+            data-title="springboot集成swagger2构建RESTful API文档"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/12/30/Spring-NamedParameterJdbcTemplate/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+        </div>
+    </div>
 
 				
 				
